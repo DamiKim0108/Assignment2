@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script id="vertex-shader" type="x-shader/x-vertex">
+attribute vec4 vPosition; 
+attribute vec4 vColor;
+
+varying vec4 fColor;
+uniform vec4 uOffset;
+
+void main(){
+          gl_Position = vPosition + uOffset;
+          fColor = vColor;
+          gl_PointSize = 10.0;
+
+}
+</script>
+
+<script id="fragment-shader" type="x-shader/x-fragment">
+precision mediump float;
+uniform vec4 color;
+varying vec4 fColor;
+
+void main(){
+          gl_FragColor = color + fColor;
+}
+</script>
+
+<script type="text/javascript" src="D:\Notepad++\ex1/Common/webgl-utils.js"></script>
+<script type="text/javascript" src="D:\Notepad++\ex1/Common/initShaders.js"></script>
+<script type="text/javascript" src="D:\Notepad++\ex1/Common/MV.js"></script>
+<script type="text/javascript" src="Assignment2.js"></script>
+</head>
+<body>
+
+
+<canvas id="gl-canvas" width="512" height="512">
+
+</canvas>
+<br>
+<button id = "Left">
+          Left
+</button>
+
+
+<button id = "Right">
+          Right
+</button>
+
+<br><b>
+202035308 김다미
+</body>
+</html>
